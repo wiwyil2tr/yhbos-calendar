@@ -20,8 +20,8 @@
         <translation>YYYY-MM-DD</translation>
     </message>
     <message>
-        <source>YHBOS Calendar</source>
-        <translation>yhbos 万年历</translation>
+        <source>YHBOS Perpetual Calendar</source>
+        <translation>YHBOS 万年历</translation>
     </message>
     <message>
         <source>Aquarius</source>

@@ -20,8 +20,8 @@
         <translation>ГГГГ-ММ-ДД</translation>
     </message>
     <message>
-        <source>YHBOS Calendar</source>
-        <translation>yhbos Вечный календарь</translation>
+        <source>YHBOS Perpetual Calendar</source>
+        <translation>YHBOS Вечный календарь</translation>
     </message>
     <message>
         <source>Aquarius</source>

@@ -103,7 +103,7 @@ MainWindow::MainWindow(QWidget *parent)
     mainLayout->addWidget(m_calendar, 1);
     mainLayout->addWidget(m_infoLabel);
 
-    setWindowTitle(tr("YHBOS Calendar"));
+    setWindowTitle(tr("YHBOS Perpetual Calendar"));
     resize(750, 620);
 
     QDate today = QDate::currentDate();
@@ -166,7 +166,7 @@ void MainWindow::retranslateUi()
     m_forwardBtn->setText(tr("Forward"));
     m_jumpBtn->setText(tr("Jump"));
     m_searchInput->setPlaceholderText(tr("YYYY-MM-DD"));
-    setWindowTitle(tr("YHBOS Calendar"));
+    setWindowTitle(tr("YHBOS Perpetual Calendar"));
 }
 
 void MainWindow::openSettings()
