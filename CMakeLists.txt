@@ -44,7 +44,7 @@ set(CPACK_PACKAGE_CONTACT "yhbos")
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER "yhbos")
 set(CPACK_PACKAGE_SECTION "utils")
 set(CPACK_PACKAGE_HOMEPAGE_URL "https://github.com/yhbos/yhbos-calendar")
-set(CPACK_DEBIAN_PACKAGE_DEPENDS "qt6-base-dev (>= 6.0), liblunar-date-3.0-1 (>= 3.0), libkf6holidays6 (>= 6.0)")
+set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
 set(CPACK_GENERATOR "DEB")
 set(CPACK_DEBIAN_FILE_NAME "yhbos-calendar-1.0.deb")
 

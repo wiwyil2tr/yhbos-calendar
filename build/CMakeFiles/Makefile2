@@ -117,8 +117,8 @@ CMakeFiles/KF6Holidays_QCH.dir/clean:
 # Target rules for target CMakeFiles/yhbos-calendar.dir
 
 # All Build rule for target.
-CMakeFiles/yhbos-calendar.dir/all: CMakeFiles/yhbos-calendar_autogen_timestamp_deps.dir/all
 CMakeFiles/yhbos-calendar.dir/all: CMakeFiles/yhbos-calendar_autogen.dir/all
+CMakeFiles/yhbos-calendar.dir/all: CMakeFiles/yhbos-calendar_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/yhbos-calendar.dir/build.make CMakeFiles/yhbos-calendar.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/yhbos-calendar.dir/build.make CMakeFiles/yhbos-calendar.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/user/projects/yhbos-calendar/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target yhbos-calendar"
