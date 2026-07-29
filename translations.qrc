@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/translations">
+        <file alias="yhbos-calendar_zh_CN">translations/qtcalendar_zh_CN.qm</file>
+        <file alias="yhbos-calendar_ru">translations/qtcalendar_ru.qm</file>
+    </qresource>
+</RCC>

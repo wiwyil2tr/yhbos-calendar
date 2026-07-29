@@ -1,0 +1,12 @@
+/home/user/projects/yhbos-calendar/build/CMakeFiles/KF6Holidays_QCH.dir
+/home/user/projects/yhbos-calendar/build/CMakeFiles/yhbos-calendar.dir
+/home/user/projects/yhbos-calendar/build/CMakeFiles/package.dir
+/home/user/projects/yhbos-calendar/build/CMakeFiles/package_source.dir
+/home/user/projects/yhbos-calendar/build/CMakeFiles/edit_cache.dir
+/home/user/projects/yhbos-calendar/build/CMakeFiles/rebuild_cache.dir
+/home/user/projects/yhbos-calendar/build/CMakeFiles/list_install_components.dir
+/home/user/projects/yhbos-calendar/build/CMakeFiles/install.dir
+/home/user/projects/yhbos-calendar/build/CMakeFiles/install/local.dir
+/home/user/projects/yhbos-calendar/build/CMakeFiles/install/strip.dir
+/home/user/projects/yhbos-calendar/build/CMakeFiles/yhbos-calendar_autogen_timestamp_deps.dir
+/home/user/projects/yhbos-calendar/build/CMakeFiles/yhbos-calendar_autogen.dir

@@ -1,0 +1,26 @@
+{
+	"BUILD_DIR" : "/home/user/projects/yhbos-calendar/build/yhbos-calendar_autogen",
+	"CMAKE_BINARY_DIR" : "/home/user/projects/yhbos-calendar/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/user/projects/yhbos-calendar/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/user/projects/yhbos-calendar",
+	"CMAKE_SOURCE_DIR" : "/home/user/projects/yhbos-calendar",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Unix Makefiles",
+	"INCLUDE_DIR" : "/home/user/projects/yhbos-calendar/build/yhbos-calendar_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/user/projects/yhbos-calendar/translations/qtcalendar_ru.qm",
+		"/home/user/projects/yhbos-calendar/translations/qtcalendar_zh_CN.qm"
+	],
+	"LOCK_FILE" : "/home/user/projects/yhbos-calendar/build/CMakeFiles/yhbos-calendar_autogen.dir/AutoRcc_translations_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "translations" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_translations.cpp",
+	"RCC_EXECUTABLE" : "/usr/lib/qt6/libexec/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/user/projects/yhbos-calendar/build/CMakeFiles/yhbos-calendar_autogen.dir/AutoRcc_translations_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/home/user/projects/yhbos-calendar/translations.qrc",
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

@@ -1,0 +1,12 @@
+Architecture: amd64
+Depends: qt6-base-dev (>= 6.0), liblunar-date-3.0-1 (>= 3.0), libkf6holidays6 (>= 6.0)
+Description: Desktop calendar with Lunar calendar support
+ A Qt6-based desktop calendar application with dual Gregorian/Lunar display, 24 solar terms, traditional Chinese festivals, and multi-language support.
+Homepage: https://github.com/yhbos/yhbos-calendar
+Maintainer: yhbos
+Package: yhbos-calendar
+Priority: optional
+Section: devel
+Version: 1.0
+Installed-Size: 192
+
