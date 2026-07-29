@@ -11,7 +11,7 @@ A Qt6-based desktop calendar application with dual Gregorian/Lunar calendar disp
 - 24 Solar terms (from liblunar-date)
 - Traditional Chinese lunar festivals (Spring Festival, Lantern Festival, Dragon Boat, Mid-Autumn, etc.)
 - Solar holidays from system locale (via KF6Holidays)
-- Multi-language UI (中文 / English / Русский) — switchable from Settings menu
+- Multi-language UI (中文 / English / Русский) — switchable from Settings men
 - Info bar: lunar date, Bazi, zodiac, constellation, holidays
 
 ## Dependencies
