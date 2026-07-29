@@ -7,6 +7,7 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QComboBox>
+#include <QSpinBox>
 #include <QLineEdit>
 #include <QDate>
 #include <QLocale>
@@ -30,13 +31,13 @@ MainWindow::MainWindow(QWidget *parent)
     mainLayout->setSpacing(6);
     mainLayout->setContentsMargins(10, 10, 10, 10);
 
-    QMenu *settingsMenu = menuBar()->addMenu(tr("Settings"));
-    QAction *settingsAction = settingsMenu->addAction(tr("Preferences..."));
-    connect(settingsAction, &QAction::triggered, this, &MainWindow::openSettings);
+    m_settingsMenu = menuBar()->addMenu(tr("Settings"));
+    m_settingsAction = m_settingsMenu->addAction(tr("Preferences..."));
+    connect(m_settingsAction, &QAction::triggered, this, &MainWindow::openSettings);
 
-    QMenu *helpMenu = menuBar()->addMenu(tr("About"));
-    QAction *aboutAction = helpMenu->addAction(tr("About YHBOS Calendar"));
-    connect(aboutAction, &QAction::triggered, this, &MainWindow::openAbout);
+    m_helpMenu = menuBar()->addMenu(tr("About"));
+    m_aboutAction = m_helpMenu->addAction(tr("About YHBOS Calendar"));
+    connect(m_aboutAction, &QAction::triggered, this, &MainWindow::openAbout);
 
     auto *navBar = new QHBoxLayout;
 
@@ -77,6 +78,17 @@ MainWindow::MainWindow(QWidget *parent)
     controlBar->addWidget(m_yearCombo);
     controlBar->addWidget(m_monthCombo);
     controlBar->addWidget(m_goBtn);
+
+    m_dayOffset = new QSpinBox;
+    m_dayOffset->setRange(1, 9999);
+    m_dayOffset->setValue(1);
+    m_dayOffset->setFixedWidth(70);
+    m_backBtn = new QPushButton(tr("Back"));
+    m_forwardBtn = new QPushButton(tr("Forward"));
+
+    controlBar->addWidget(m_dayOffset);
+    controlBar->addWidget(m_backBtn);
+    controlBar->addWidget(m_forwardBtn);
     controlBar->addStretch();
     controlBar->addWidget(m_searchInput);
     controlBar->addWidget(m_jumpBtn);
@@ -117,6 +129,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(m_todayBtn, &QPushButton::clicked, this, &MainWindow::goToday);
     connect(m_goBtn, &QPushButton::clicked, this, &MainWindow::onYearMonthChanged);
     connect(m_jumpBtn, &QPushButton::clicked, this, &MainWindow::jumpToDate);
+    connect(m_backBtn, &QPushButton::clicked, this, &MainWindow::goBackDays);
+    connect(m_forwardBtn, &QPushButton::clicked, this, &MainWindow::goForwardDays);
     connect(m_searchInput, &QLineEdit::returnPressed, this, &MainWindow::jumpToDate);
     connect(m_calendar, &CalendarWidget::dateSelected, this, &MainWindow::onDateSelected);
 
@@ -142,8 +156,14 @@ void MainWindow::loadLanguage(const QString &langCode)
 
 void MainWindow::retranslateUi()
 {
+    m_settingsMenu->setTitle(tr("Settings"));
+    m_settingsAction->setText(tr("Preferences..."));
+    m_helpMenu->setTitle(tr("About"));
+    m_aboutAction->setText(tr("About YHBOS Calendar"));
     m_todayBtn->setText(tr("Today"));
     m_goBtn->setText(tr("Go"));
+    m_backBtn->setText(tr("Back"));
+    m_forwardBtn->setText(tr("Forward"));
     m_jumpBtn->setText(tr("Jump"));
     m_searchInput->setPlaceholderText(tr("YYYY-MM-DD"));
     setWindowTitle(tr("YHBOS Calendar"));
@@ -211,7 +231,7 @@ void MainWindow::openAbout()
     layout->addWidget(titleLabel);
 
     auto *authorLabel = new QLabel(
-        QString("<b>%1</b><br>%2 &lt;wiwyil2tr@ya.ru&gt;")
+        QString("<b>%1</b><br>%2 &lt;wiwyil2tr@yandex.com&gt;")
             .arg(tr("Author:"), "wiwyil2tr"));
     authorLabel->setAlignment(Qt::AlignCenter);
     layout->addWidget(authorLabel);
@@ -323,6 +343,36 @@ void MainWindow::jumpToDate()
     if (!d.isValid()) return;
 
     m_calendar->setYearMonth(d.year(), d.month());
+    m_yearCombo->setCurrentIndex(m_yearCombo->findData(d.year()));
+    m_monthCombo->setCurrentIndex(d.month() - 1);
+    updateTitle();
+    updateInfo(d);
+}
+
+void MainWindow::goBackDays()
+{
+    int days = m_dayOffset->value();
+    QDate d = m_calendar->selectedDate().isValid()
+              ? m_calendar->selectedDate()
+              : QDate::currentDate();
+    d = d.addDays(-days);
+    m_calendar->setYearMonth(d.year(), d.month());
+    m_calendar->setSelectedDate(d);
+    m_yearCombo->setCurrentIndex(m_yearCombo->findData(d.year()));
+    m_monthCombo->setCurrentIndex(d.month() - 1);
+    updateTitle();
+    updateInfo(d);
+}
+
+void MainWindow::goForwardDays()
+{
+    int days = m_dayOffset->value();
+    QDate d = m_calendar->selectedDate().isValid()
+              ? m_calendar->selectedDate()
+              : QDate::currentDate();
+    d = d.addDays(days);
+    m_calendar->setYearMonth(d.year(), d.month());
+    m_calendar->setSelectedDate(d);
     m_yearCombo->setCurrentIndex(m_yearCombo->findData(d.year()));
     m_monthCombo->setCurrentIndex(d.month() - 1);
     updateTitle();

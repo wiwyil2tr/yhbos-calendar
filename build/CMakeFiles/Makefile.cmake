@@ -189,6 +189,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/KF6Holidays_QCH.dir/DependInfo.cmake"
   "CMakeFiles/yhbos-calendar.dir/DependInfo.cmake"
+  "CMakeFiles/pack_deb.dir/DependInfo.cmake"
   "CMakeFiles/yhbos-calendar_autogen_timestamp_deps.dir/DependInfo.cmake"
   "CMakeFiles/yhbos-calendar_autogen.dir/DependInfo.cmake"
   )

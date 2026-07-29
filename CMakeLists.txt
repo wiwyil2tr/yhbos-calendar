@@ -38,10 +38,10 @@ install(TARGETS yhbos-calendar RUNTIME DESTINATION bin)
 
 set(CPACK_PACKAGE_NAME "yhbos-calendar")
 set(CPACK_PACKAGE_VERSION "1.0")
-set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Desktop calendar with Lunar calendar support")
-set(CPACK_PACKAGE_DESCRIPTION "A Qt6-based desktop calendar application with dual Gregorian/Lunar display, 24 solar terms, traditional Chinese festivals, and multi-language support.")
-set(CPACK_PACKAGE_CONTACT "yhbos")
-set(CPACK_DEBIAN_PACKAGE_MAINTAINER "yhbos")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Lightweight Desktop Calendar with Lunar Calendar Support")
+set(CPACK_PACKAGE_DESCRIPTION "Lightweight Desktop Calendar with Lunar Calendar Support")
+set(CPACK_PACKAGE_CONTACT "wiwyil2tr <wiwyil2tr@yandex.com>")
+set(CPACK_DEBIAN_PACKAGE_MAINTAINER "wiwyil2tr <wiwyil2tr@yandex.com>")
 set(CPACK_PACKAGE_SECTION "utils")
 set(CPACK_PACKAGE_HOMEPAGE_URL "https://github.com/yhbos/yhbos-calendar")
 set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
@@ -49,3 +49,11 @@ set(CPACK_GENERATOR "DEB")
 set(CPACK_DEBIAN_FILE_NAME "yhbos-calendar-1.0.deb")
 
 include(CPack)
+
+add_custom_target(pack_deb
+    COMMAND ${CMAKE_COMMAND} --build ${CMAKE_BINARY_DIR}
+    COMMAND ${CMAKE_CPACK_COMMAND} -G DEB
+    COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/cmake/pack_deb.sh ${CMAKE_BINARY_DIR}/yhbos-calendar-1.0.deb
+    WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+    COMMENT "Building multi-language .deb package"
+)

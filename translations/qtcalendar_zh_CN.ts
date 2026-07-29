@@ -104,6 +104,14 @@
         <translation>许可证: GNU 通用公共许可证第二版</translation>
     </message>
     <message>
+        <source>Back</source>
+        <translation>前</translation>
+    </message>
+    <message>
+        <source>Forward</source>
+        <translation>后</translation>
+    </message>
+    <message>
         <source>Close</source>
         <translation>关闭</translation>
     </message>

@@ -7,8 +7,11 @@
 class QLabel;
 class QPushButton;
 class QComboBox;
+class QSpinBox;
 class QLineEdit;
 class QTranslator;
+class QMenu;
+class QAction;
 class CalendarWidget;
 
 class MainWindow : public QMainWindow
@@ -27,6 +30,8 @@ private slots:
     void onYearMonthChanged();
     void onDateSelected(const QDate &date);
     void jumpToDate();
+    void goBackDays();
+    void goForwardDays();
     void openSettings();
     void openAbout();
 
@@ -46,8 +51,15 @@ private:
     QPushButton *m_todayBtn;
     QPushButton *m_goBtn;
     QPushButton *m_jumpBtn;
+    QSpinBox *m_dayOffset;
+    QPushButton *m_backBtn;
+    QPushButton *m_forwardBtn;
     QTranslator *m_translator;
     QString m_currentLang;
+    QMenu *m_settingsMenu;
+    QMenu *m_helpMenu;
+    QAction *m_settingsAction;
+    QAction *m_aboutAction;
 };
 
 #endif

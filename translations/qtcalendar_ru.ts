@@ -104,6 +104,14 @@
         <translation>Лицензия: GNU General Public License v2</translation>
     </message>
     <message>
+        <source>Back</source>
+        <translation>Назад</translation>
+    </message>
+    <message>
+        <source>Forward</source>
+        <translation>Вперёд</translation>
+    </message>
+    <message>
         <source>Close</source>
         <translation>Закрыть</translation>
     </message>

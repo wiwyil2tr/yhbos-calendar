@@ -208,6 +208,19 @@ yhbos-calendar/fast:
 .PHONY : yhbos-calendar/fast
 
 #=============================================================================
+# Target rules for targets named pack_deb
+
+# Build rule for target.
+pack_deb: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pack_deb
+.PHONY : pack_deb
+
+# fast build rule for target.
+pack_deb/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pack_deb.dir/build.make CMakeFiles/pack_deb.dir/build
+.PHONY : pack_deb/fast
+
+#=============================================================================
 # Target rules for targets named yhbos-calendar_autogen_timestamp_deps
 
 # Build rule for target.
@@ -392,6 +405,7 @@ help:
 	@echo "... package_source"
 	@echo "... rebuild_cache"
 	@echo "... KF6Holidays_QCH"
+	@echo "... pack_deb"
 	@echo "... yhbos-calendar_autogen"
 	@echo "... yhbos-calendar_autogen_timestamp_deps"
 	@echo "... yhbos-calendar"
