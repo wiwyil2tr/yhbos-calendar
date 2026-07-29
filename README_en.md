@@ -13,6 +13,7 @@ A Qt6-based desktop calendar application with dual Gregorian/Lunar calendar disp
 - Solar holidays from system locale (via KF6Holidays)
 - Multi-language UI (中文 / English / Русский) — switchable from Settings men
 - Info bar: lunar date, Bazi, zodiac, constellation, holidays
+- Jumping to date
 
 ## Dependencies
 
